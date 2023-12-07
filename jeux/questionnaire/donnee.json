@@ -1,0 +1,24 @@
+{
+  "question": {
+    "texteQuestion": "Quel est l'impact du changement climatique sur la biodiversité ?",
+    "id": 2
+  },
+  "reponses": [
+    {
+      "idReponse": 5,
+      "txt": "Le changement climatique menace la biodiversité en perturbant les habitats naturels."
+    },
+    {
+      "idReponse": 6,
+      "txt": "La biodiversité n'est pas affectée par le changement climatique."
+    },
+    {
+      "idReponse": 7,
+      "txt": "Le changement climatique favorise la diversité des espèces."
+    },
+    {
+      "idReponse": 8,
+      "txt": "Il n'y a pas suffisamment de preuves pour établir un lien entre le changement climatique et la biodiversité."
+    }
+  ]
+}
