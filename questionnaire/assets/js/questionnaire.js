@@ -26,7 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var continueButton = document.createElement('button');
         continueButton.innerText = 'Continuer';
         continueButton.classList.add('btn', 'btn-light', 'w-100', 'mb-3');
-        continueButton.onclick = () => nextGame();
+        continueButton.onclick = function () {
+            console.log("nextGame");
+            nextGame();
+        }
         answersContainer.appendChild(continueButton);
 
         if (score < 0) {
