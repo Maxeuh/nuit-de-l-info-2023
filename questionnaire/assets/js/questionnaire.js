@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(`quiz.php?questionId=${questionId}`)
             .then(response => response.json())
             .then(data => renderQuestion(data))
-            .catch(error => console.error('Error:', error));
+            .catch(finishQuiz());
+    }
+
+    function finishQuiz() {
+        questionText.innerText = 'Vous avez fini le questionnaire !';
+        answersContainer.innerHTML = '';
     }
 
     function renderQuestion(data) {
@@ -54,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         continueButton.innerText = 'Continuer';
         continueButton.classList.add('btn', 'btn-light', 'w-100', 'mb-3');
         continueButton.onclick = () => handleContinueClick();
+        answersContainer.innerHTML = '';
         answersContainer.appendChild(continueButton);
     }
 
