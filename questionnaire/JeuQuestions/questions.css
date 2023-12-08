@@ -65,6 +65,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .body img {
@@ -73,4 +74,53 @@ button {
 
 .body .face {
     max-width: 15%;
+    animation: tete 1s ease infinite;
+}
+
+@keyframes tete {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg)
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+.body .shirt {
+    animation: torse 1.5s ease infinite;
+}
+
+@keyframes torse {
+    0% {
+        transform: scaleX(1.01);
+    }
+    50% {
+        transform: scaleX(0.99);
+    }
+    100% {
+        transform: scaleX(1.01);
+    }
+}
+
+.body .micro {
+    z-index: 1;
+    position: absolute;
+    max-width: 8%;
+    bottom: 0;
+    animation: micro 2.5s linear infinite;
+}
+
+@keyframes micro {
+    0% {
+        transform: translateX(5px) rotate(-3deg);
+    }
+    50% {
+        transform: translateX(-5px) rotate(3deg);
+    }
+    100% {
+        transform: translateX(5px) rotate(-3deg);
+    }
 }

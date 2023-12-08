@@ -46,35 +46,4 @@ function nextQuestion() {
     }
 }
 
-////////////////////
-//PARTIE ANIMATION//
-////////////////////
-
-var head = document.getElementById('head');
-var angleHead = 0.3;
-var scaleHead = 1;
-
-function animateHead() {
-    //tourner la tête
-    angleHead = angleHead * (-1);
-    head.style.transform = 'rotate(' + angleHead + 'deg)';
-
-    //légèrement la déformer
-    if(scaleHead == 1){
-        scaleHead += 0.1;
-    } 
-    else {
-        scaleHead = 1;
-    }
-
-    head.style.transform = 'scaleY(' + scaleY + ')';
-}
-
-function animateShirt() {
-    
-}
-
-setInterval(animateHead, 100);
-setInterval(animateShirt, 200)
-
 displayQuestion();
