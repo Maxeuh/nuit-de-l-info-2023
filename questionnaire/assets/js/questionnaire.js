@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const answerElement = document.createElement('button');
             answerElement.innerText = answer.txt;
             answerElement.classList.add('answer-button', 'btn', 'btn-light', 'w-100', 'mb-3');
-            answerElement.onclick = () => handleAnswerClick(answer.pts, answer.id);
+            answerElement.onclick = () => handleAnswerClick(answer.pts, currentQuestionId);
             answersContainer.appendChild(answerElement);
         });
 
