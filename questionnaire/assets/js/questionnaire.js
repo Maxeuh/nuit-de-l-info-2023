@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(`quiz.php?questionId=${questionId}`)
             .then(response => response.json())
             .then(data => renderQuestion(data))
-            .catch(finishQuiz());
+            .catch(() => finishQuiz());
     }
 
     function finishQuiz() {
