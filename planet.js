@@ -41,4 +41,10 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+window.changeEarthTexture = function(newTextureURL) {
+    const newTexture = new THREE.TextureLoader().load(newTextureURL);
+    earth.material.map = newTexture;
+    earth.material.needsUpdate = true;
+};
+
 animate();
