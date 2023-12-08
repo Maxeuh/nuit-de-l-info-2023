@@ -14,13 +14,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function finishQuiz() {
+        const images = ["/back/earth_state_good.png","/back/earth.png", "/back/earth_state_bad.png", "/back/earth-bad.png"];
+
         questionText.innerText = 'Vous avez fini le questionnaire !';
         answersContainer.innerHTML = 'Votre score est de ' + score + ' points.';
         if (score < 0) {
             answersContainer.innerHTML += '<br>Vous avez fait se réchauffer la planète !';
-            window.parent.changeEarthTexture('/back/earth-bad.png');
-        } else {
+            window.parent.document.getElementById("score").innerText -= 1;
+            if (window.parent.document.getElementById("score").innerText < 0) {
+                window.parent.document.getElementById("score").innerText = 0;
+            }
+            window.parent.changeEarthTexture(images[window.parent.document.getElementById("score").innerText])
+        }else if (score == 0) {
+            answersContainer.innerHTML += '<br>Vous êtes résté dans la même situation !';
+        }
+        else {
             answersContainer.innerHTML += '<br>Vous avez fait refroidir la planète !';
+            window.parent.document.getElementById("score").innerText += 1;
+            if (window.parent.document.getElementById("score").innerText > 3) {
+                window.parent.document.getElementById("score").innerText = 3;
+            }
+            window.parent.changeEarthTexture(images[window.parent.document.getElementById("score").innerText])
         }
     }
 
