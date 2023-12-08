@@ -13,14 +13,21 @@ body {
     --header-button: #292935BF;
     --header-button-hover: #3B2F4ABF;
     --background: linear-gradient(#16161d, #1f1f3a, #3b2f4a);
+    --random-font-main: #FFFFFF;
+    --random-header-footer: #FFFFFFBF;
+    --random-fromage: #FFFFFF;
+    --random-header-button: #FFFFFFBF;
+    --random-header-button-hover: #FFFFFFBF;
+    --random-background: linear-gradient(#FFFFFF, #FFFFFF, #FFFFFF);
     color: var(--font-main);
     width: 100%;
     min-height: 100vh;
     max-height: 100vh;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: space-between;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body.kawai {
@@ -30,6 +37,15 @@ body.kawai {
     --header-button: #FF71B8BF;
     --header-button-hover: #FF27E2BF;
     --background: linear-gradient(#911691, #C91BC9, #94158e);
+}
+
+body.anarchique {
+    --font-main: var(--random-font-main);
+    --header-footer: var(--random-header-footer);
+    --fromage: var(--random-fromage);
+    --header-button: var(--random-header-button);
+    --header-button-hover: var(--random-header-button-hover);
+    --background: var(--random-background);
 }
 
 header, footer {
@@ -63,6 +79,8 @@ header div.menu {
 }
 
 header a {
+    display: block;
+    position: relative;
     color: var(--font-main);
     text-decoration: none;
     text-align: center;
@@ -75,8 +93,66 @@ header a {
     transition: background-color 0.3s;
 }
 
-header a:hover {
+header .theme {
+    display: block;
+    position: relative;
+    color: var(--font-main);
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+header .theme > span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--header-button);
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+header a:hover, header .theme:hover > span, header .theme .list span:hover {
     background-color: var(--header-button-hover);
+    cursor: pointer;
+}
+
+header .theme:hover {
+    background-color: var(--header-button);
+    cursor: pointer;
+}
+
+header .theme:hover {
+    border-radius: 10px 10px 0 0;
+}
+
+header .theme:hover .list {
+    border-radius: 0 0 10px 10px;
+}
+
+header .theme .list {
+    background-color: var(--header-button);
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 101;
+}
+
+header .theme .list span {
+    width: 100%;
+    transition: background-color 0.3s;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+header .theme:hover .list {
+    display: flex;
 }
 
 footer a {

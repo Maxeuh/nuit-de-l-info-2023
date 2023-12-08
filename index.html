@@ -11,7 +11,14 @@
             <div class="menu">
                 <a href="/">Jeu</a>
                 <a href="/">Classement</a>
-                <a href="/">A propos</a>
+                <div class="theme">
+                    <span>Thème</span>
+                    <div class="list">
+                        <span onclick="setTheme('')">Espace</span>
+                        <span onclick="setTheme('kawai')">Kawai</span>
+                        <span onclick="setTheme('anarchique')">⚠️ Anarchique ⚠️</span>
+                    </div>
+                </div>
             </div>
         </header>
         <div class="content">
@@ -25,6 +32,7 @@
         </footer>
         <script src="https://threejs.org/build/three.js"></script>
         <script src="planet.js"></script>
+        <script src="js/theme.js"></script>
         <script src="js/konami.js"></script>
         <span class="background">
     </body>
