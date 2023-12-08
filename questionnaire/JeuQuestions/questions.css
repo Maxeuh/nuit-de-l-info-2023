@@ -1,10 +1,12 @@
 body {
-    background: url('bg.png') no-repeat center center fixed;
-    background-size: cover; 
+    background: url('bg.png') no-repeat center fixed;
+    background-size: cover;
     margin: 0; 
-    padding: 0; 
-    display: flex;
+    padding: 0;
     min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -12,8 +14,7 @@ body {
     background-color: #f0f0f0;
     text-align: center;
     padding: 40px;
-    margin: 160px;
-    margin-top: 20px;
+    margin: 20px 25%;
     border: 1px solid #ccc;
     border-radius: 50%;
     position: relative;
@@ -26,36 +27,24 @@ body {
     height: 0;
     border-style: solid;
     border-width: 15px 15px 0;
-    border-color: #f0f0f0 transparent transparent;
-    bottom: -15px;
-    left: 50%;
+    border-color: #f0f0f0 transparent;
+    bottom: -10px;
     transform: translateX(-50%);
 }
 
 #buttons {
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: 15px;
-}
-
-.vrai {
-    border-radius: 50%;
-    height: 60px;
-    padding: 16px;
-    background-color: #4caf50;
-    margin-right: 50%;
-}
-
-.faux {
-    border-radius: 50%;
-    height: 60px;
-    padding: 13px;
-    background-color: #af4c4c;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1.5rem;
     background-color: #4c98af;
     color: #fff;
     border: none;
@@ -63,23 +52,75 @@ button {
     cursor: pointer;
 }
 
-#personnage {
-    width: 200px;
-    height: 400px;
+.vrai {
+    background-color: #4caf50;
+}
+
+.faux {
+    background-color: #af4c4c;
+}
+
+.body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
-    margin: auto;
 }
 
-.face {
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 50%; /* Ajustez la hauteur de la tête selon vos préférences */
+.body img {
+    max-width: 20%;
 }
 
-.shirt {
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 50%; 
+.body .face {
+    max-width: 15%;
+    animation: tete 1s ease infinite;
+}
+
+@keyframes tete {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg)
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+.body .shirt {
+    animation: torse 1.5s ease infinite;
+}
+
+@keyframes torse {
+    0% {
+        transform: scaleX(1.01);
+    }
+    50% {
+        transform: scaleX(0.99);
+    }
+    100% {
+        transform: scaleX(1.01);
+    }
+}
+
+.body .micro {
+    z-index: 1;
+    position: absolute;
+    max-width: 8%;
+    bottom: 0;
+    animation: micro 2.5s linear infinite;
+}
+
+@keyframes micro {
+    0% {
+        transform: translateX(5px) rotate(-3deg);
+    }
+    50% {
+        transform: translateX(-5px) rotate(3deg);
+    }
+    100% {
+        transform: translateX(5px) rotate(-3deg);
+    }
 }
