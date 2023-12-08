@@ -58,9 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Store the data in a variable
                 let Text = data.question; // Assuming 'data' has a 'question' property
                 questionText.innerText = Text;
-
-                // You can also call renderQuestion here if needed
-                renderQuestion(data);
             })
 
 
