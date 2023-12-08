@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(Text);
             })
 
+        console.log(fetch(`explanation.php?questionId=${id}`));
+
 
         const continueButton = document.createElement('button');
         continueButton.innerText = 'Continuer';
