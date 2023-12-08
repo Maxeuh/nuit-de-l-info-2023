@@ -15,25 +15,27 @@
         <div class="col-lg-5 mx-auto my-auto">
             <div class="card bg-secondary bg-opacity-75 p-4">
                 <h2 class="text-center" id="question-text">Merci d’avoir joué</h2>
-                <div id="answers-container"><script>
+                <h3 id="comment"></h3>
+                <script>
                     const score = parseInt(window.parent.document.getElementById("score").innerText);
                     console.log(score);
                     switch (score){
                         case 0:
-                            document.getElementById("question-text").innerHTML = "Vous avez très bien joué, la planète à renversé le changement climatique";
+                            document.getElementById("comment").innerHTML = "Vous avez très bien joué, la planète à renversé le changement climatique";
                             break;
                         case 1:
-                            document.getElementById("question-text").innerHTML = "Vous avez réussis à garder le changement climatique a son niveau actuel";
+                            document.getElementById("comment").innerHTML = "Vous avez réussis à garder le changement climatique a son niveau actuel";
                             break;
                         case 2:
-                            document.getElementById("question-text").innerHTML = "Le changement climatique à augmenté, mais la planète est encore vivable";
+                            document.getElementById("comment").innerHTML = "Le changement climatique à augmenté, mais la planète est encore vivable";
                             break;
                         case 3:
-                            document.getElementById("question-text").innerHTML = "Le changement climatique à augmenté, la planète est devenu invivable";
+                            document.getElementById("comment").innerHTML = "Le changement climatique à augmenté, la planète est devenu invivable";
                             break;
 
                     }
-                </script></div>
+                </script>
+
             </div>
         </div>
     </div>
