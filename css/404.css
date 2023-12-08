@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    124deg,
+    #ff2400,
+    #e81d1d,
+    #e8b71d,
+    #e3e81d,
+    #1de840,
+    #1ddde8,
+    #2b1de8,
+    #dd00f3,
+    #dd00f3
+  );
+  background-size: 1800% 1800%;
+
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+#tetris {
+    background-color: #FFFFFF;
+    width: 360px;
+    border: 1px solid black;
+    padding: 20px;
+}
+#canvas {
+  width: 200px;
+  height: 440px;
+  background-color: #000;
+  position: relative;
+  color: #fff;
+}
+#canvas h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 200px;
+}
+.piece {
+  border: 1px solid white;
+  position: absolute;
+}
+
+#start {
+    width: 100%;
+    margin-top: 10px;
+  animation: blink 0.7s steps(2, start) infinite;
+  background: #e1ff5f;
+  border-radius: 2px;
+  color: #202020;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+@keyframes blink {
+  to {
+    outline: #e1ff5f solid 1px;
+  }
+}
+
+.red {
+    margin: 10px 0;
+  color: #f00000;
+}
+
+.square {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border: 1px solid white;
+}
+.type0 {
+  background-color: #a000f0;
+}
+.type1 {
+  background-color: #00f0f0;
+}
+.type2 {
+  background-color: #f0a000;
+}
+.type3 {
+  background-color: #0000f0;
+}
+.type4 {
+  background-color: #00f000;
+}
+.type5 {
+  background-color: #f00000;
+}
+.type6 {
+  background-color: #f0f000;
+}
+#next_shape {
+  position: relative;
+  background-color: #000;
+  border: 1px solid white;
+  width: 110px;
+  height: 110px;
+}
+#info {
+  background-color: #000;
+  color: #fff;
+  float: right;
+  width: 110px;
+  height: 420px;
+  padding: 10px;
+}
+
+img {
+    position: absolute;
+    height: 20vh;
+    bottom: 0;
+    left: 0;
+    animation: charlie 20s linear infinite;
+}
+
+@keyframes charlie {
+    0% {
+        left: 0;
+        transform: scaleX(1);
+    }
+    50% {
+        left: calc(100% - 136px);
+        transform: scaleX(1);
+    }
+    50.00001% {
+        transform: scaleX(-1);
+    }
+    100% {
+        left: 0;
+        transform: scaleX(-1);
+    }
+}
