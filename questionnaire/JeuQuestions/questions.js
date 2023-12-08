@@ -88,6 +88,8 @@ function nextQuestion() {
             }
             window.parent.changeEarthTexture(images[window.parent.document.getElementById("score").innerText])
         }
+
+        window.parent.document.getElementsByTagName('iframe')[0].src ='/back/questionnaire/finish.html';
     }
 }
 

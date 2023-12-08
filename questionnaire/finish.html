@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Jeu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/questionnaire.js"></script>
+</head>
+
+<body class="vh-100 d-flex align-items-center justify-content-center">
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 mx-auto my-auto">
+            <div class="card bg-secondary bg-opacity-75 p-4">
+                <h2 class="text-center" id="question-text">Merci d’avoir joué</h2>
+                <div id="answers-container"><script>
+                    const score = parseInt(window.parent.document.getElementById(score));
+
+                    switch (score){
+                        case 0:
+                            document.getElementById("question-text").innerHTML = "Vous avez très bien joué, la planète à renversé le changement climatique";
+                            break;
+                        case 1:
+                            document.getElementById("question-text").innerHTML = "Vous avez réussis à garder le changement climatique a son niveau actuel";
+                            break;
+                        case 2:
+                            document.getElementById("question-text").innerHTML = "Le changement climatique à augmenté, mais la planète est encore vivable";
+                            break;
+                        case 3:
+                            document.getElementById("question-text").innerHTML = "Le changement climatique à augmenté, la planète est devenu invivable";
+                            break;
+
+                    }
+                </script></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
