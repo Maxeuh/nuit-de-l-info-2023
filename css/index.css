@@ -16,7 +16,6 @@ div.score {
     overflow: hidden;
 }
 
-/* A RETIRER */
 div.jeu, div.score {
     display: flex;
     justify-content: center;
