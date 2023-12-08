@@ -16,8 +16,8 @@
             <div class="card bg-secondary bg-opacity-75 p-4">
                 <h2 class="text-center" id="question-text">Merci d’avoir joué</h2>
                 <div id="answers-container"><script>
-                    const score = parseInt(window.parent.document.getElementById(score));
-
+                    const score = window.parent.document.getElementById(score);
+                    console.log(score);
                     switch (score){
                         case 0:
                             document.getElementById("question-text").innerHTML = "Vous avez très bien joué, la planète à renversé le changement climatique";
