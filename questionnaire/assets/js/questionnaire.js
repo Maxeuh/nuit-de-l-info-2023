@@ -54,18 +54,16 @@ document.addEventListener('DOMContentLoaded', function () {
         fetchQuestion(currentQuestionId);
     }
 
-    function handleAnswerClick(points, id) {
+    async function handleAnswerClick(points, id) {
         score += points;
 
-        fetch(`explanation.php?questionId=${id}`)
+        await fetch(`explanation.php?questionId=${id}`)
             .then(data => {
                 // Store the data in a variable
                 let Text = data.question; // Assuming 'data' has a 'question' property
                 questionText.innerText = Text;
                 console.log(Text);
             })
-
-        console.log(fetch(`explanation.php?questionId=${id}`));
 
 
         const continueButton = document.createElement('button');
