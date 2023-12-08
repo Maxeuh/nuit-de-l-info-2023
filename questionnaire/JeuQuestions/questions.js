@@ -5,8 +5,14 @@
 
 // Liste des questions et réponses
 const quizData = [
-    { question: "Le ciel est bleu.", answer: true },
-    { question: "La Terre est plate.", answer: false },
+    {
+        question: "Le ciel est bleu.",
+        answer: true
+    },
+    {
+        question: "La Terre est plate.",
+        answer: false
+    }
     // Ajoutez autant de questions que nécessaire
 ];
 
@@ -44,7 +50,7 @@ function nextQuestion() {
 //PARTIE ANIMATION//
 ////////////////////
 
-var personnage = document.getElementById('personnage');
+var head = document.getElementById('head');
 var angleHead = 0.3;
 var scaleHead = 1;
 
@@ -54,9 +60,6 @@ function animateHead() {
     head.style.transform = 'rotate(' + angleHead + 'deg)';
 
     //légèrement la déformer
-}
-
-function animateShirt() {
     if(scaleHead == 1){
         scaleHead += 0.1;
     } 
@@ -64,7 +67,11 @@ function animateShirt() {
         scaleHead = 1;
     }
 
-    personnage.style.transform = 'scaleY(' + scaleY + ')';
+    head.style.transform = 'scaleY(' + scaleY + ')';
+}
+
+function animateShirt() {
+    
 }
 
 setInterval(animateHead, 100);
