@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleAnswerClick(points, id) {
         score += points;
 
-        fetch(`explanation.php?questionId=${questionId}`)
+        fetch(`quiz.php?questionId=${id}`)
             .then(response => response.json())
             .then(data => {
                 // Store the data in a variable
