@@ -15,7 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function finishQuiz() {
         questionText.innerText = 'Vous avez fini le questionnaire !';
-        answersContainer.innerHTML = '';
+        answersContainer.innerHTML = 'Votre score est de ' + score + ' points.';
+        if (score < 0) {
+            answersContainer.innerHTML += '<br>Vous avez fait se réchauffer la planète !';
+        } else {
+            answersContainer.innerHTML += '<br>Vous avez fait refroidir la planète !';
+        }
     }
 
     function renderQuestion(data) {
@@ -58,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Store the data in a variable
                 let Text = data.question; // Assuming 'data' has a 'question' property
                 questionText.innerText = Text;
+                console.log(Text);
             })
 
 
