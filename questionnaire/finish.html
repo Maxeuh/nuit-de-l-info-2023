@@ -16,7 +16,7 @@
             <div class="card bg-secondary bg-opacity-75 p-4">
                 <h2 class="text-center" id="question-text">Merci d’avoir joué</h2>
                 <div id="answers-container"><script>
-                    const score = window.parent.document.getElementById("score");
+                    const score = parseInt(window.parent.document.getElementById("score").innerText);
                     console.log(score);
                     switch (score){
                         case 0:
