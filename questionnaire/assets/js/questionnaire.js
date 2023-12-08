@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(() => finishQuiz());
     }
 
+    function nextGame() {
+        window.parent.document.getElementById("iframe_jeu").src = "/back/questionnaire/JeuQuestions/questions.html";
+    }
+
     function finishQuiz() {
         const images = ["/back/earth_state_good.png","/back/earth.png", "/back/earth_state_bad.png", "/back/earth-bad.png"];
 
@@ -21,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var continueButton = document.createElement('button');
         continueButton.innerText = 'Continuer';
         continueButton.classList.add('btn', 'btn-light', 'w-100', 'mb-3');
-        continueButton.onclick = () => window.parent.document.getElementById("iframe_jeu").src = "/back/questionnaire/JeuQuestions/questions.html";
+        continueButton.onclick = () => nextGame();
         answersContainer.appendChild(continueButton);
 
         if (score < 0) {
