@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         answersContainer.innerHTML = 'Votre score est de ' + score + ' points.';
         if (score < 0) {
             answersContainer.innerHTML += '<br>Vous avez fait se réchauffer la planète !';
-            window.parent.document.getElementById("score").innerText -= 1;
+            window.parent.document.getElementById("score").innerText = parseInt(window.parent.document.getElementById("score").innerText) - 1;
             if (window.parent.document.getElementById("score").innerText < 0) {
                 window.parent.document.getElementById("score").innerText = 0;
             }
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         else {
             answersContainer.innerHTML += '<br>Vous avez fait refroidir la planète !';
-            window.parent.document.getElementById("score").innerText += 1;
+            window.parent.document.getElementById("score").innerText = parseInt(window.parent.document.getElementById("score").innerText) + 1;
             if (window.parent.document.getElementById("score").innerText > 3) {
                 window.parent.document.getElementById("score").innerText = 3;
             }
