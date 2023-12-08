@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function handleAnswerClick(points, id) {
         score += points;
 
-        await fetch(`explanation.php?questionId=${id}`)
+        await fetch(`explanation.php?questionId=${currentQuestionId}`)
             .then(response => response.json())
             .then(data => {
                 // Store the data in a variable
