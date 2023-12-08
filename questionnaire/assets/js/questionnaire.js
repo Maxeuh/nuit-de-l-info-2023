@@ -60,10 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         await fetch(`explanation.php?questionId=${currentQuestionId}`)
             .then(response => response.text())
             .then(data => {
-                // Store the data in a variable
-                let Text = data.question; // Assuming 'data' has a 'question' property
-                questionText.innerText = Text;
-                console.log(Text);
+                questionText.innerText = data;
             })
 
 
