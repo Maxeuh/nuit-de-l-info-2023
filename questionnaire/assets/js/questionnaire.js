@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function nextGame() {
+        console.log("nextGame");
         window.parent.document.getElementById("iframe_jeu").src = "/back/questionnaire/JeuQuestions/questions.html";
     }
 
