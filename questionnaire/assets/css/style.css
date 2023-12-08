@@ -1,0 +1,29 @@
+
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;    background: url('../img/background.png') fixed;
+}
+
+.card {
+    border: none;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+#question {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.lead {
+    margin-bottom: 30px;
+}
+
+button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}

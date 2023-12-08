@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="questions.css">
+    <title>Mini Jeu de Questionnaire</title>
+</head>
+<body>
+    <div id="bubble">Bulle de texte ici</div>
+
+    <div id="personnage">
+        <div class="face"><img src="face.gif"></div>
+        <div class="shirt"><img src="s"></div>
+    </div>
+
+    <div id="buttons">
+        <button class="vrai" onclick="checkAnswer(true)">VRAI</button>
+        <button class="faux" onclick="checkAnswer(false)">FAUX</button>
+    </div>
+    <script src="questions.js"></script>
+</body>
+</html>
