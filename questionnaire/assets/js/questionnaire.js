@@ -1,41 +1,53 @@
 async function recupererDonneesJSON() {
-    try {
 
-        const url = 'donnee.json';
-        const reponse = await fetch(url);
-        if (!reponse.ok) {
-            throw new Error(`Erreur lors de la récupération des données : ${reponse.status}`);
-        }
-        const donnees = await reponse.json();
-        const button1 = document.getElementById('button1');
-        const button2 = document.getElementById('button2');
-        const button3 = document.getElementById('button3');
-        const button4 = document.getElementById('button4');
+    const questionText = document.getElementById('question-text');
+    const answersContainer = document.getElementById('answers-container');
+    const scoreElement = document.getElementById('score');
 
-        document.getElementById('question').innerHTML = donnees.question.texteQuestion;
-        button1.innerHTML = donnees.reponses[0].txt;
-        button2.innerHTML = donnees.reponses[1].txt;
-        button3.innerHTML = donnees.reponses[2].txt;
-        button4.innerHTML = donnees.reponses[3].txt;
+    let currentQuestionId = 1;
+    let score = 0;
 
-        let tableauHauteur = [];
-        tableauHauteur.push(button1.offsetHeight);
-        tableauHauteur.push(button2.offsetHeight);
-        tableauHauteur.push(button3.offsetHeight);
-        tableauHauteur.push(button4.offsetHeight);
+    scoreElement.innerText = score;
 
-        let hauteurMax = Math.max(...tableauHauteur);
-
-        button1.style.height = hauteurMax + "px";
-        button2.style.height = hauteurMax + "px";
-        button3.style.height = hauteurMax + "px";
-        button4.style.height = hauteurMax + "px";
-
-
-
-    } catch (erreur) {
-        console.error('Erreur :', erreur.message);
+    function fetchQuestion(questionId) {
+        fetch(`quiz.php?questionId=${questionId}`)
+            .then(response => response.json())
+            .then(data => renderQuestion(data))
+            .catch(error => console.error('Error:', error));
     }
-}
 
-recupererDonneesJSON();
+    function renderQuestion(data) {
+        questionText.innerText = data.question.texteQuestion;
+        answersContainer.innerHTML = ''; // Clear previous answers
+
+        data.reponses.forEach(answer => {
+            const answerElement = document.createElement('button');
+            answerElement.innerText = answer.txt;
+            answerElement.classList.add('answer-button btn btn-light w-100 mb-3');
+            answerElement.onclick = () => handleAnswerClick(answer.pts);
+            answersContainer.appendChild(answerElement);
+        });
+
+        const tableauHauteur = [];
+        const tableauBouton = document.querySelectorAll('.answer-button');
+        tableauBouton.forEach(bouton => {
+            tableauHauteur.push(bouton.offsetHeight);
+        });
+
+        const hauteurMax = Math.max(...tableauHauteur);
+
+        tableauBouton.forEach(bouton => {
+            bouton.style.height = hauteurMax + "px";
+        });
+
+    }
+
+    function handleAnswerClick(points) {
+        score += points;
+        scoreElement.innerText = score;
+        currentQuestionId++;
+        fetchQuestion(currentQuestionId);
+    }
+
+    fetchQuestion(currentQuestionId); // Initially load the first question
+}
