@@ -1,4 +1,4 @@
-async function recupererDonneesJSON() {
+document.addEventListener('DOMContentLoaded', function () {
 
     const questionText = document.getElementById('question-text');
     const answersContainer = document.getElementById('answers-container');
@@ -23,7 +23,7 @@ async function recupererDonneesJSON() {
         data.reponses.forEach(answer => {
             const answerElement = document.createElement('button');
             answerElement.innerText = answer.txt;
-            answerElement.classList.add('answer-button btn btn-light w-100 mb-3');
+            answerElement.classList.add('answer-button', 'btn', 'btn-light', 'w-100', 'mb-3');
             answerElement.onclick = () => handleAnswerClick(answer.pts);
             answersContainer.appendChild(answerElement);
         });
@@ -50,4 +50,4 @@ async function recupererDonneesJSON() {
     }
 
     fetchQuestion(currentQuestionId); // Initially load the first question
-}
+});
