@@ -20,7 +20,6 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    overflow: hidden;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -108,7 +107,7 @@ footer:hover ~ .background {
 	pointer-events: none;
 	width: 100vw;
 	height: 100vh;
-	background-image: /* url("../src/space.gif"), */ var(--background);
+	background-image: url("../src/star.png"), var(--background);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
