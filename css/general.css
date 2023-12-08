@@ -66,6 +66,25 @@ body.lightMode {
     --background: linear-gradient(#ffffff, #999999, #ffffff);
 }
 
+body.thomas {
+    --font-main: #fbff00;
+    --header-footer: #ff00d4bf;
+    --fromage: #ff00c8;
+    --header-button: rgb(255, 255, 255);
+
+    --header-button-hover: #cccccc;
+    --background: linear-gradient(#ff009d, #33ff00, #15ff00);
+}
+
+body.gothique {
+    --font-main: #FFFFFF;
+    --header-footer: #000000bf;
+    --fromage: #ff0000;
+    --header-button: #ff7171bf;
+    --header-button-hover: #ff2727bf;
+    --background: linear-gradient(#000000, #c91b1b, #000000);
+}
+
 header, footer {
     display: flex;
     flex-direction: row;
@@ -180,15 +199,15 @@ footer a {
 
 .background {
     z-index: -1;
-	position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-	pointer-events: none;
-	width: 100vw;
-	height: 100vh;
-	background-image: url("../src/star.png"), var(--background);
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../src/star.png"), var(--background);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
