@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         questionText.innerText = 'Vous avez fini le questionnaire !';
         answersContainer.innerHTML = 'Votre score est de ' + score + ' points.';
+        var continueButton = document.createElement('button');
+        continueButton.innerText = 'Continuer';
+        continueButton.classList.add('btn', 'btn-light', 'w-100', 'mb-3');
+        continueButton.onclick = () => window.parent.document.getElementById("iframe_jeu").setAttribute("src", "/back/questionnaire/JeuQuestions/questions.html")
+        answersContainer.appendChild(continueButton);
+
         if (score < 0) {
             answersContainer.innerHTML += '<br>Vous avez fait se réchauffer la planète !';
             window.parent.document.getElementById("score").innerText = parseInt(window.parent.document.getElementById("score").innerText) + 1;
