@@ -84,19 +84,6 @@ footer a {
     text-align: center;
 }
 
-footer:hover ~ .background {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: url("../src/cheese.jpg"), var(--background);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
 .background {
     z-index: -1;
 	position: absolute;
@@ -110,5 +97,18 @@ footer:hover ~ .background {
 	background-image: url("../src/star.png"), var(--background);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer:hover ~ .background {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../src/cheese.jpg"), url("../src/star.png"), var(--background);
+    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
 }
