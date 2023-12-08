@@ -1,12 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const questionText = document.getElementById('question-text');
     const answersContainer = document.getElementById('answers-container');
-    const scoreElement = document.getElementById('score');
 
     let currentQuestionId = 1;
-    let score = 0;
-
-    scoreElement.innerText = score;
 
     function fetchQuestion(questionId) {
         fetch(`quiz.php?questionId=${questionId}`)
@@ -29,8 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function handleAnswerClick(points) {
-        score += points;
-        scoreElement.innerText = score;
         currentQuestionId++;
         fetchQuestion(currentQuestionId);
     }
