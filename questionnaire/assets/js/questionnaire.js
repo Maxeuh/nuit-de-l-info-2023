@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const answerElement = document.createElement('button');
             answerElement.innerText = answer.txt;
             answerElement.classList.add('answer-button', 'btn', 'btn-light', 'w-100', 'mb-3');
-            answerElement.onclick = () => handleAnswerClick(answer);
+            answerElement.onclick = () => handleAnswerClick(answer.pts, answer.id);
             answersContainer.appendChild(answerElement);
         });
 
@@ -36,13 +36,18 @@ document.addEventListener('DOMContentLoaded', function () {
         tableauBouton.forEach(bouton => {
             bouton.style.height = hauteurMax + "px";
         });
-
     }
 
-    function handleAnswerClick(answer) {
-        score += answer.pts;
 
-        questionText.innerHTML = fetch(`explanation.php?questionId=${questionId}`)
+    function handleContinueClick() {
+        currentQuestionId++;
+        fetchQuestion(currentQuestionId);
+    }
+
+    function handleAnswerClick(points, id) {
+        score += points;
+
+        questionText.innerHTML = fetch(`explanation.php?questionId=${id}`)
             .catch(error => console.error('Error:', error));
 
         const continueButton = document.createElement('button');
@@ -50,15 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         continueButton.classList.add('btn', 'btn-light', 'w-100', 'mb-3');
         continueButton.onclick = () => handleContinueClick();
         answersContainer.appendChild(continueButton);
-
-
     }
-
-    function handleContinueClick() {
-        currentQuestionId++;
-        fetchQuestion(currentQuestionId);
-    }
-
 
     fetchQuestion(currentQuestionId); // Initially load the first question
 });
