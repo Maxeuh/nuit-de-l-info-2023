@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const answerElement = document.createElement('button');
             answerElement.innerText = answer.txt;
             answerElement.classList.add('answer-button', 'btn', 'btn-light', 'w-100', 'mb-3');
-            answerElement.onclick = () => handleAnswerClick(answer.pts);
+            answerElement.onclick = () => handleAnswerClick(answer);
             answersContainer.appendChild(answerElement);
         });
 
@@ -39,11 +39,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    function handleAnswerClick(points) {
-        score += points;
+    function handleAnswerClick(answer) {
+        score += answer.pts;
+
+        questionText.innerHTML = fetch(`explanation.php?questionId=${questionId}`)
+            .catch(error => console.error('Error:', error));
+
+        const continueButton = document.createElement('button');
+        continueButton.innerText = 'Continuer';
+        continueButton.classList.add('btn', 'btn-light', 'w-100', 'mb-3');
+        continueButton.onclick = () => handleContinueClick();
+        answersContainer.appendChild(continueButton);
+
+
+    }
+
+    function handleContinueClick() {
         currentQuestionId++;
         fetchQuestion(currentQuestionId);
     }
+
 
     fetchQuestion(currentQuestionId); // Initially load the first question
 });
