@@ -31,3 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetchQuestion(currentQuestionId); // Initially load the first question
 });
+function nextGame() {
+    console.log("nextGame");
+    window.parent.document.getElementById("iframe_jeu").src = "/back/questionnaire/JeuQuestions/questions.html";
+}

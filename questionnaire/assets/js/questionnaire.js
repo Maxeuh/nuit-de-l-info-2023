@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const questionText = document.getElementById('question-text');
@@ -23,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var continueButton = document.createElement('button');
         continueButton.innerText = 'Continuer';
         continueButton.classList.add('btn', 'btn-light', 'w-100', 'mb-3');
-        continueButton.setAttribute('onclick', 'nextGame');
+        continueButton.setAttribute('onclick', 'nextGame()');
         answersContainer.appendChild(continueButton);
 
         if (score < 0) {
@@ -97,8 +100,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetchQuestion(currentQuestionId); // Initially load the first question
 });
-
-function nextGame() {
-    console.log("nextGame");
-    window.parent.document.getElementById("iframe_jeu").src = "/back/questionnaire/JeuQuestions/questions.html";
-}
