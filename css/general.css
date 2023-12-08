@@ -3,11 +3,17 @@
     padding: 0;
     box-sizing: border-box;
     font-display: swap;
-	--twinkle-duration: 4s;
-    color: #FFFFFF;
+    --twinkle-duration: 4s;
 }
 
 body {
+    --font-main: #FFFFFF;
+    --header-footer: #1F1F2EBF;
+    --fromage: yellow;
+    --header-button: #292935BF;
+    --header-button-hover: #3B2F4ABF;
+    --background: linear-gradient(#16161d, #1f1f3a, #3b2f4a);
+    color: var(--font-main);
     width: 100%;
     min-height: 100vh;
     max-height: 100vh;
@@ -18,15 +24,25 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+body.kawai {
+    --font-main: #FFFFFF;
+    --header-footer: #FF9EBEBF;
+    --fromage: #FF00AA;
+    --header-button: #FF71B8BF;
+    --header-button-hover: #FF27E2BF;
+    --background: linear-gradient(#911691, #C91BC9, #94158e);
+}
+
 header, footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #1E1E2C;
+    background-color: var(--header-footer);
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
+    z-index: 100;
 }
 
 header h1 {
@@ -34,10 +50,11 @@ header h1 {
     margin: 10px;
     padding: 0;
     text-transform: uppercase;
+    transition: color 0.3s;
 }
 
 header h1:hover {
-    color: yellow;
+    color: var(--fromage);
 }
 
 header div.menu {
@@ -47,12 +64,12 @@ header div.menu {
 }
 
 header a {
-    color: #FFFFFF;
+    color: var(--font-main);
     text-decoration: none;
     text-align: center;
     font-weight: bold;
     width: 100%;
-    background-color: #292935;
+    background-color: var(--header-button);
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
@@ -60,12 +77,25 @@ header a {
 }
 
 header a:hover {
-    background-color: #3B2F4A;
+    background-color: var(--header-button-hover);
 }
 
 footer a {
     width: 100%;
     text-align: center;
+}
+
+footer:hover ~ .background {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../src/cheese.jpg"), var(--background);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .background {
@@ -78,74 +108,8 @@ footer a {
 	pointer-events: none;
 	width: 100vw;
 	height: 100vh;
-	background: linear-gradient(#16161d, #1f1f3a, #3b2f4a);
-	overflow: hidden;
-}
-
-.stars {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	animation: twinkle var(--twinkle-duration) ease-in-out infinite;
-
-	&:nth-child(2) {
-		animation-delay: calc(var(--twinkle-duration) * -0.33);
-	}
-	&:nth-child(3) {
-		animation-delay: calc(var(--twinkle-duration) * -0.66);
-	}
-
-	@keyframes twinkle {
-		25% {
-			opacity: 0;
-		}
-	}
-}
-
-.star {
-	fill: white;
-
-	&:nth-child(3n) {
-		opacity: 0.8;
-	}
-	&:nth-child(7n) {
-		opacity: 0.6;
-	}
-	&:nth-child(13n) {
-		opacity: 0.4;
-	}
-	&:nth-child(19n) {
-		opacity: 0.2;
-	}
-}
-
-.comet {
-	transform-origin: center center;
-	animation: comet 10s linear infinite;
-
-	@keyframes comet {
-		0%,
-		40% {
-			transform: translateX(0);
-			opacity: 0;
-		}
-		50% {
-			opacity: 1;
-		}
-		60%,
-		100% {
-			transform: translateX(-100vmax);
-			opacity: 0;
-		}
-	}
-}
-
-.comet-b {
-	animation-delay: -3.3s;
-}
-
-.comet-c {
-	animation-delay: -5s;
+	background-image: /* url("../src/space.gif"), */ var(--background);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
