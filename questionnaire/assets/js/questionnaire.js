@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var continueButton = document.createElement('button');
         continueButton.innerText = 'Continuer';
         continueButton.classList.add('btn', 'btn-light', 'w-100', 'mb-3');
-        continueButton.setAttribute('onclick', "document.getElementsByTagName('iframe')[0].src ='/back/questionnaire/JeuQuestions/questions.html'");
+        continueButton.setAttribute('onclick', "window.parent.document.getElementsByTagName('iframe')[0].src ='/back/questionnaire/JeuQuestions/questions.html'");
         answersContainer.appendChild(continueButton);
 
         if (score < 0) {
