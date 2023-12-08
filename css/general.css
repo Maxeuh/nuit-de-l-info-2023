@@ -48,6 +48,24 @@ body.anarchique {
     --background: var(--random-background);
 }
 
+body.darkMode {
+    --font-main: #ffffff;
+    --header-footer: #464646bf;
+    --fromage: #252525;
+    --header-button: rgb(63, 63, 63);
+    --header-button-hover: #1a1a1a;
+    --background: linear-gradient(#000000, #5e5e5e, #000000);
+}
+
+body.lightMode {
+    --font-main: #000000;
+    --header-footer: #cfcfcfbf;
+    --fromage: #dbdbdb;
+    --header-button: rgb(255, 255, 255);
+    --header-button-hover: #cccccc;
+    --background: linear-gradient(#ffffff, #999999, #ffffff);
+}
+
 header, footer {
     display: flex;
     flex-direction: row;
