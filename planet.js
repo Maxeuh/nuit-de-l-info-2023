@@ -1,11 +1,12 @@
 // Scene setup
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); // Enable transparency
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000, 0); // Set clear color to black with 0 opacity
 renderer.gammaOutput = true;
 renderer.gammaFactor = 2.2;
+renderer.setSize(500,500)
 document.getElementById("planet").appendChild(renderer.domElement);
 
 // Enhanced Lighting
@@ -28,7 +29,7 @@ const material = new THREE.MeshPhongMaterial({
 const earth = new THREE.Mesh(geometry, material);
 scene.add(earth);
 
-camera.position.z = 5;
+camera.position.z = 2;
 
 // Animation function
 function animate() {

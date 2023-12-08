@@ -1,12 +1,11 @@
 div.content {
     display: flex;
-    height: 100%;
+    max-height: 100vh;
     margin: 0 10px;
     gap: 10px;
 }
 
 div.jeu {
-    background-color: #FFFFFF;
     width: 75%;
     height: 100%;
 }
@@ -17,14 +16,12 @@ div.jeu iframe {
 }
 
 div.score {
-    background-color: #FFFFFF;
     width: 25%;
     height: 100%;
+    overflow: hidden;
 }
 
-/* A RETIRER */
 div.jeu, div.score {
-    color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
