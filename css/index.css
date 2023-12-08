@@ -1,13 +1,12 @@
 div.content {
     display: flex;
-    max-height: 100vh;
+    height: 100%;
     margin: 0 10px;
     gap: 10px;
 }
 
 div.jeu {
     width: 75%;
-    height: 100%;
 }
 
 div.jeu iframe {
@@ -17,11 +16,11 @@ div.jeu iframe {
 
 div.score {
     width: 25%;
-    height: 100%;
     overflow: hidden;
 }
 
 div.jeu, div.score {
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
