@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleAnswerClick(points, id) {
         score += points;
 
-        questionText.innerHTML = fetch(`explanation.php?questionId=${id}`)
-            .catch(error => console.error('Error:', error));
+        explanation = "";
+        questionText.innerHTML = fetch(`explanation.php?questionId=${id}`).then(response => response.text()).then(data => explanation = data);
 
         const continueButton = document.createElement('button');
         continueButton.innerText = 'Continuer';
