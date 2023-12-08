@@ -52,12 +52,24 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleAnswerClick(points, id) {
         score += points;
 
-        response = fetch(`explanation.php?questionId=${id}`)
-            .catch(error => console.error('Error:', error));
+        fetch(`explanation.php?questionId=${questionId}`)
+            .then(response => response.json())
+            .then(data => {
+                // Store the data in a variable
+                let questionText = data.question; // Assuming 'data' has a 'question' property
 
-        console.log(response);
+                // Create an h2 element and set its text content
+                let h2Element = document.createElement('h2');
+                h2Element.textContent = questionText;
 
-        questionText.innerText = response;
+                // Append the h2 element to the DOM
+                // For example, appending it to a div with id 'question-container'
+                document.getElementById('question-container').appendChild(h2Element);
+
+                // You can also call renderQuestion here if needed
+                renderQuestion(data);
+            })
+
 
         const continueButton = document.createElement('button');
         continueButton.innerText = 'Continuer';
