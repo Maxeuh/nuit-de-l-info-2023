@@ -56,15 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 // Store the data in a variable
-                let questionText = data.question; // Assuming 'data' has a 'question' property
-
-                // Create an h2 element and set its text content
-                let h2Element = document.createElement('h2');
-                h2Element.textContent = questionText;
-
-                // Append the h2 element to the DOM
-                // For example, appending it to a div with id 'question-container'
-                document.getElementById('question-container').appendChild(h2Element);
+                let Text = data.question; // Assuming 'data' has a 'question' property
+                questionText.innerText = Text;
 
                 // You can also call renderQuestion here if needed
                 renderQuestion(data);
