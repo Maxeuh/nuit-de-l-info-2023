@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentQuestionId = 1;
     let score = 0;
 
-    scoreElement.innerText = score;
-
     function fetchQuestion(questionId) {
         fetch(`quiz.php?questionId=${questionId}`)
             .then(response => response.json())
