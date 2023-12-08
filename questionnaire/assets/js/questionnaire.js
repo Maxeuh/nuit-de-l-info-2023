@@ -13,10 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(() => finishQuiz());
     }
 
-    function nextGame() {
-        console.log("nextGame");
-        window.parent.document.getElementById("iframe_jeu").src = "/back/questionnaire/JeuQuestions/questions.html";
-    }
+
 
     function finishQuiz() {
         const images = ["/back/earth_state_good.png","/back/earth.png", "/back/earth_state_bad.png", "/back/earth-bad.png"];
@@ -100,3 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetchQuestion(currentQuestionId); // Initially load the first question
 });
+
+function nextGame() {
+    console.log("nextGame");
+    window.parent.document.getElementById("iframe_jeu").src = "/back/questionnaire/JeuQuestions/questions.html";
+}
