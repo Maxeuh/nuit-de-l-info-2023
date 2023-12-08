@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         score += points;
 
         await fetch(`explanation.php?questionId=${currentQuestionId}`)
+            .then(response => response.json())
             .then(data => {
                 // Store the data in a variable
                 let Text = data.question; // Assuming 'data' has a 'question' property
