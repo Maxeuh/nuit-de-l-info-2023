@@ -63,6 +63,8 @@ function checkAnswer(userAnswer) {
 }
 
 function nextQuestion() {
+    const images = ["/back/earth_state_good.png","/back/earth.png", "/back/earth_state_bad.png", "/back/earth-bad.png"];
+
     if (currentQuestion < quizData.length - 1) {
         currentQuestion++;
         displayQuestion();
