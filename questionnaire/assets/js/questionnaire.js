@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         answersContainer.innerHTML = 'Votre score est de ' + score + ' points.';
         if (score < 0) {
             answersContainer.innerHTML += '<br>Vous avez fait se réchauffer la planète !';
-            window.parend.document.getElementById('planet').innerHTML= "";
+            window.parent.document.getElementById('planet').innerHTML= "";
         } else {
             answersContainer.innerHTML += '<br>Vous avez fait refroidir la planète !';
         }
